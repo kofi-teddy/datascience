@@ -3,5 +3,7 @@
 {% block title %}performance{% endblock %}
 
 {% block content %}
-    Hello world!
+   <h1>Hello world!</h1>
+   <p>{{ products | safe }}</p><br>
+   <p>{{ purchases | safe }}</p>
 {% endblock %}
