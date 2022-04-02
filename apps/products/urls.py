@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import chart_select_view
+from apps.products.views import chart_select_view
 
 app_name = 'products'
 
