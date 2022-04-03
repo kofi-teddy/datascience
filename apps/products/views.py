@@ -18,7 +18,7 @@ def chart_select_view(request):
             date_to = request.POST['date_to']
     else:
         error_message = 'No records in the database'
-
+        df = ''
     context = {
         'error_message': error_message,
         'products': product_df.to_html(),
