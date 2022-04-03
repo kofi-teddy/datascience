@@ -7,10 +7,32 @@
         <h1>Data Visualization with Django</h1>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <p>{{ products | safe }}</p>
-                <p>{{ purchases | safe }}</p>
                 <p>{{ df | safe }}</p>
             </div>
+        </div>
+        <div class="row justify-content-center">
+            <form action="" method="post">
+                <div class="col-md-8">
+                    <label>Choose a chart type:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="bar">Bar chart</option>
+                        <option value="line">Two</option>
+                        <option value="plot">Three</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="date" class="form-label">From Date</label>
+                    <input type="date" class="form-control" id="datefrom" name="datefrom" aria-describedby="dateHelp">
+                </div>
+                <div class="col-md-6">
+                    <label for="date" class="form-label">To Date</label>
+                    <input type="date" class="form-control" id="dateto" name="dateto" aria-describedby="dateHelp">
+                </div>
+                <div class="col-md-6">
+                    <button>Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}
