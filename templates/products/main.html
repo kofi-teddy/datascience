@@ -15,6 +15,13 @@
         <form method="post" class="px-5 mx-5">
             {% csrf_token %}
             <div class="row justify-content-center px-5 mx-5">
+                <div class="col-md-12">
+                    <div>
+                        {% if error_message %}
+                            {{ error_message }}
+                        {% endif %}
+                    </div>
+                </div>
                 <div class="col-md-12 mb-3">
                     <label>Choose a chart type:</label>
                     <select name="sales" class="form-select" aria-label="Default select example">
