@@ -3,16 +3,19 @@
 {% block title %}performance{% endblock %}
 
 {% block content %}
-    <div class="container text-center mt-5"> 
-        <h1>Data Visualization with Django</h1>
+    <div class="container mt-5 px-5 mx-5"> 
+        <div class="text-center">
+            <h1>Data Visualization with Django</h1>
+        </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <p>{{ df | safe }}</p>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <form action="" method="post">
-                <div class="col-md-8">
+        <form action="" method="post" class="px-5 mx-5">
+
+            <div class="row justify-content-center px-5 mx-5">
+                <div class="col-md-12 mb-3">
                     <label>Choose a chart type:</label>
                     <select class="form-select" aria-label="Default select example">
                         <option selected></option>
@@ -21,18 +24,18 @@
                         <option value="plot">Three</option>
                     </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <label for="date" class="form-label">From Date</label>
                     <input type="date" class="form-control" id="datefrom" name="datefrom" aria-describedby="dateHelp">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <label for="date" class="form-label">To Date</label>
                     <input type="date" class="form-control" id="dateto" name="dateto" aria-describedby="dateHelp">
                 </div>
-                <div class="col-md-6">
-                    <button>Submit</button>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 {% endblock %}
