@@ -8,9 +8,9 @@
             <h1>Data Visualization with Django</h1>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <p>{{ df | safe }}</p>
-            </div>
+            {% comment %} <div class="col-lg-8">
+                <p>{{ df | safe }}</p> 
+            </div> {% endcomment %}
         </div>
         <form method="post" class="px-5 mx-5">
             {% csrf_token %}

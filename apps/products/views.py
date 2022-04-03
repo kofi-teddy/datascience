@@ -6,6 +6,7 @@ from apps.products.models import Product, Purchase
 
 def chart_select_view(request):
     error_message = None
+    df = None
 
     product_df = pd.DataFrame(Product.objects.all().values())
     purchase_df = pd.DataFrame(Purchase.objects.all().values())
@@ -21,8 +22,8 @@ def chart_select_view(request):
         df = ''
     context = {
         'error_message': error_message,
-        'products': product_df.to_html(),
-        'purchases': purchase_df.to_html(),
+        # 'products': product_df.to_html(),
+        # 'purchases': purchase_df.to_html(),
         'df': df.to_html(),
     }
     return render(request, 'products/main.html', context)
