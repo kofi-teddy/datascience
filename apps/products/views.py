@@ -17,6 +17,11 @@ def chart_select_view(request):
             chart_type = request.POST['sales']
             date_from = request.POST['date_from']
             date_to = request.POST['date_to']
+
+            df['date'] = df['date'].apply(lambda x: x.strftime('%Y-%m-%d'))
+            print(df['date'])
+            df2 = df.groupby('date', as_index=False)['total_price'].agg('sum')
+            print(df2)
     else:
         error_message = 'No records in the database'
         df = ''
