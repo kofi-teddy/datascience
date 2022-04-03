@@ -12,12 +12,12 @@
                 <p>{{ df | safe }}</p>
             </div>
         </div>
-        <form action="" method="post" class="px-5 mx-5">
-
+        <form method="post" class="px-5 mx-5">
+            {% csrf_token %}
             <div class="row justify-content-center px-5 mx-5">
                 <div class="col-md-12 mb-3">
                     <label>Choose a chart type:</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select name="sales" class="form-select" aria-label="Default select example">
                         <option selected></option>
                         <option value="bar">Bar chart</option>
                         <option value="line">Line plot</option>
