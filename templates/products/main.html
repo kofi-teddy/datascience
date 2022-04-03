@@ -3,8 +3,14 @@
 {% block title %}performance{% endblock %}
 
 {% block content %}
-   <h1>Hello world!</h1>
-   <p>{{ products | safe }}</p>
-   <p>{{ purchases | safe }}</p>
-   <p>{{ df | safe }}</p>
+    <div class="container text-center mt-5"> 
+        <h1>Data Visualization with Django</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <p>{{ products | safe }}</p>
+                <p>{{ purchases | safe }}</p>
+                <p>{{ df | safe }}</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
