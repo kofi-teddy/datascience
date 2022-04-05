@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 from apps.products.models import Product, Purchase
 
+from .utils import get_simple_plot
+
 
 def chart_select_view(request):
     error_message = None
@@ -27,7 +29,7 @@ def chart_select_view(request):
                     df2 = df.groupby('date', as_index=False)['total_price'].agg('sum')
                 
                 # function to get the graph 
-                
+                # get_simple_plot(chart_type, x)
             else:
                 error_message = 'please select a chart type to continue'
     else:
