@@ -24,7 +24,7 @@
                     <div>
                         {% if request.POST %}
                             {% if graph %}
-                                <img src="data:image/png:base64, {{graph | safe }}">
+                                <img src="data:image/png;base64, {{graph | safe }}">
                             {% endif %}
                         {% endif %}
                     </div>

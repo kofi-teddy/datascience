@@ -14,6 +14,7 @@ def chart_select_view(request):
     product_df = pd.DataFrame(Product.objects.all().values())
     purchase_df = pd.DataFrame(Purchase.objects.all().values())
     product_df['product_id'] = product_df['id']
+    
     if purchase_df.shape[0] > 0:
         df = pd.merge(purchase_df, product_df, on='product_id').drop(['id_y', 'date_y'], axis=1).rename({'id_x': 'id', 'date_x': 'date'}, axis=1)
         if request.method == 'POST':
@@ -23,12 +24,13 @@ def chart_select_view(request):
 
             df['date'] = df['date'].apply(lambda x: x.strftime('%Y-%m-%d'))
             df2 = df.groupby('date', as_index=False)['total_price'].agg('sum')
-
+            # print(df2)
             if chart_type != '':
                 if date_from != '' and date_to != '':
                     df = df[(df['date'] > date_from) & (df['date'] < date_to )]
                     df2 = df.groupby('date', as_index=False)['total_price'].agg('sum')
-                
+                    print(df2)
+                    # print(df)
                 # function to get the graph 
                 graph = get_simple_plot(chart_type, x=df2['date'], y=df2['total_price'], data=df)
             else:

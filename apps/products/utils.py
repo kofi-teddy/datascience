@@ -29,7 +29,7 @@ def get_simple_plot(chart_type, *args, **kwargs):
     plt.switch_backend('AGG')
     
     fig = plt.figure(figsize=(10, 4))
-    x= kwargs.get('x')
+    x = kwargs.get('x')
     y = kwargs.get('y')
     data = kwargs.get('data')
 
@@ -45,7 +45,8 @@ def get_simple_plot(chart_type, *args, **kwargs):
         title = 'title'
         plt.title(title)
         sns.countplot('name', data=data)
-    plt.tight_layout()
     
+    plt.tight_layout()
+
     graph = get_image()
     return graph
